@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6741350371576834799}
   - component: {fileID: 2090112988718118981}
   - component: {fileID: 6154605047116012414}
+  - component: {fileID: 334729679498296920}
   m_Layer: 6
   m_Name: NinjaFrog
   m_TagString: Player
@@ -146,7 +147,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.011635542, y: -0.05429679}
+  m_Offset: {x: 0.011635542, y: -0.20048851}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -157,7 +158,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5633395, y: 2.3467655}
+  m_Size: {x: 1.5633395, y: 2.6391492}
   m_EdgeRadius: 0
 --- !u!114 &6154605047116012414
 MonoBehaviour:
@@ -173,3 +174,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoClickDamage: 10
   autoClickInterval: 2
+--- !u!95 &334729679498296920
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8395986002705310914}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 005645d7aed05244197ba1b680d48845, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

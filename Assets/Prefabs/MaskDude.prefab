@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1052263523529631897}
   - component: {fileID: 522680228846128641}
   - component: {fileID: 5051169453524349665}
+  - component: {fileID: -8873197194831063949}
   m_Layer: 6
   m_Name: MaskDude
   m_TagString: Player
@@ -146,7 +147,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.108041525, y: 0.0761289}
+  m_Offset: {x: 0.108041525, y: -0.053819478}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -157,7 +158,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9892592, y: 2.639514}
+  m_Size: {x: 1.9892592, y: 2.8994107}
   m_EdgeRadius: 0
 --- !u!114 &5051169453524349665
 MonoBehaviour:
@@ -173,3 +174,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoClickDamage: 10
   autoClickInterval: 2
+  speed: 2
+--- !u!95 &-8873197194831063949
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8612393587827988485}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ea9868b7a07b4ec438cbb9b9536ab8e2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
