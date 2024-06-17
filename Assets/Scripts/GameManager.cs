@@ -5,11 +5,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject boxPrefab;
-    public GameObject[] rewards;
     public GameObject currentBox;
+    private RewardManager rewardManager;
 
     void Start()
     {
+        rewardManager = FindObjectOfType<RewardManager>();
         SpawnNewBox();
     }
 
@@ -21,8 +22,8 @@ public class GameManager : MonoBehaviour
 
     public void OnBoxDestroyed()
     {
-        // 보상 아이템 생성 로직
-       
+        int randomReward = Random.Range(0, 3); // 0, 1, 2 중 하나의 값을 랜덤으로 선택
+        rewardManager.AddRandomReward(randomReward, 10); // 선택된 보상에 대해 10개 추가
         SpawnNewBox();
     }
 }

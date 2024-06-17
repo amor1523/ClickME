@@ -17,6 +17,8 @@ public class Box : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        // Debug.Log($"BoxÀÇ Ã¼·Â: {currentHealth}");
+
         if (currentHealth <= 0)
         {
             DestroyBox();

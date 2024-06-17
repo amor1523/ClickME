@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClickManager : MonoBehaviour
 {
-    public float autoClickInterval = 5.0f;
+    public float autoClickInterval = 2.0f;
     private GameManager gameManager;
 
     void Start()
@@ -25,7 +25,7 @@ public class ClickManager : MonoBehaviour
     {
         if (gameManager.currentBox != null)
         {
-            gameManager.currentBox.GetComponent<Box>().TakeDamage(10); // 클릭 시 1의 데미지를 줌 수정!
+            gameManager.currentBox.GetComponent<Box>().TakeDamage(10); // 클릭 시 10의 데미지를 줌
         }
     }
 
@@ -37,7 +37,7 @@ public class ClickManager : MonoBehaviour
             if (gameManager.currentBox != null)
             {
                 Debug.Log("오토클릭 발생!");
-                gameManager.currentBox.GetComponent<Box>().TakeDamage(10); // 오토 클릭 시 1의 데미지를 줌 수정!
+                gameManager.currentBox.GetComponent<Box>().TakeDamage(10); // 오토 클릭 시 10의 데미지를 줌
             }
         }
     }
