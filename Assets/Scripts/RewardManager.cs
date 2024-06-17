@@ -9,9 +9,14 @@ public class RewardManager : MonoBehaviour
     public TextMeshProUGUI appleScoreText;
     public TextMeshProUGUI bananaScoreText;
     public TextMeshProUGUI cherryScoreText;
-    private int appleScore = 0;
-    private int bananaScore = 0;
-    private int cherryScore = 0;
+    private int appleScore = 1000;
+    private int bananaScore = 1000;
+    private int cherryScore = 1000;
+
+    private void Start()
+    {
+        UpdateUI();
+    }
 
     public void AddRandomReward(int rewardType, int amount)
     {
@@ -28,6 +33,39 @@ public class RewardManager : MonoBehaviour
                 break;
         }
         UpdateUI();
+    }
+
+    public bool UseApples(int amount)
+    {
+        if (appleScore >= amount)
+        {
+            appleScore -= amount;
+            UpdateUI();
+            return true;
+        }
+        return false;
+    }
+
+    public bool UseBananas(int amount)
+    {
+        if (bananaScore >= amount)
+        {
+            bananaScore -= amount;
+            UpdateUI();
+            return true;
+        }
+        return false;
+    }
+
+    public bool UseCherries(int amount)
+    {
+        if (cherryScore >= amount)
+        {
+            cherryScore -= amount;
+            UpdateUI();
+            return true;
+        }
+        return false;
     }
 
     void UpdateUI()
