@@ -14,11 +14,17 @@ public class Box : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
     }
 
+    private void Update()
+    {
+        if (currentHealth <= 0)
+        {
+            DestroyBox();
+        }
+    }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        // Debug.Log($"BoxÀÇ Ã¼·Â: {currentHealth}");
-
         if (currentHealth <= 0)
         {
             DestroyBox();

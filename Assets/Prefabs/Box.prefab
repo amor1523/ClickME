@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3043842164006061389}
   - component: {fileID: 5968061534158929995}
   - component: {fileID: 8303134613831690157}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,7 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8305326656331899823}
   - component: {fileID: 1518631576006887705}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -8,6 +8,7 @@ public class ClickManager : MonoBehaviour
     private GameManager gameManager;
     private Coroutine autoClickCoroutine;
 
+    public int clickDamage = 10; // 기본 클릭 데미지
 
     void Start()
     {
@@ -29,7 +30,7 @@ public class ClickManager : MonoBehaviour
     {
         if (gameManager.currentBox != null)
         {
-            gameManager.currentBox.GetComponent<Box>().TakeDamage(10); // 클릭 시 10의 데미지를 줌
+            gameManager.currentBox.GetComponent<Box>().TakeDamage(clickDamage); // 클릭 시 clickDamage만큼의 데미지를 줌
         }
     }
 
@@ -44,5 +45,10 @@ public class ClickManager : MonoBehaviour
                 gameManager.currentBox.GetComponent<Box>().TakeDamage(10);
             }
         }
+    }
+
+    public void IncreaseClickDamage(int amount)
+    {
+        clickDamage += amount;
     }
 }
