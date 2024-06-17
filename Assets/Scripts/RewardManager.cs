@@ -37,7 +37,8 @@ public class RewardManager : MonoBehaviour
         cherryScoreText.text = cherryScore.ToString();
     }
 
-    //TODO:: 리워드발생 시 Box위치 위에 리워드 + 10 UI띄움
+    //TODO:: 리워드발생 시 Box위치 위에 리워드 +
+    //10 UI띄움
     //public void RewardsUI()
     //{
     //    GameObject go = Instantiate(plusTxt, plusTxt.transform.position, plusTxt.transform.rotation, UICanvus);
