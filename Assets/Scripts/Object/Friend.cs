@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Friend : MonoBehaviour
 {
-    public int autoClickDamage = 10;
+    public int autoClickDamage = 50;
     public float autoClickInterval = 2.0f;
     private GameManager gameManager;
 

@@ -40,7 +40,7 @@ public class ClickManager : MonoBehaviour
             yield return new WaitForSeconds(autoClickInterval);
             if (gameManager.currentBox != null)
             {
-                Debug.Log("오토클릭 발생!");
+                //Debug.Log("오토클릭 발생!");
                 gameManager.currentBox.GetComponent<Box>().TakeDamage(10);
             }
         }
