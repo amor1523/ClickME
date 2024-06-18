@@ -1,17 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
+using System.Numerics;
+using Vector3 = UnityEngine.Vector3; // BigInteger를 사용하기 위해 추가
 
 public class RewardManager : MonoBehaviour
 {
     public TextMeshProUGUI appleScoreText;
     public TextMeshProUGUI bananaScoreText;
     public TextMeshProUGUI cherryScoreText;
-    private int appleScore = 1000;
-    private int bananaScore = 1000;
-    private int cherryScore = 1000;
+    private BigInteger appleScore = new BigInteger(0); // BigInteger 기능을 확인하고 싶다면 1000 넣기!
+    private BigInteger bananaScore = new BigInteger(0); // BigInteger 기능을 확인하고 싶다면 1000000 넣기!
+    private BigInteger cherryScore = new BigInteger(0); // BigInteger 기능을 확인하고 싶다면 1000000000 넣기!
+
+    public GameObject rewardPrefab; // 프리팹 참조
+    public Transform uiCanvas; // UI 캔버스 참조
 
     private void Start()
     {
@@ -70,16 +72,15 @@ public class RewardManager : MonoBehaviour
 
     void UpdateUI()
     {
-        appleScoreText.text = appleScore.ToString();
-        bananaScoreText.text = bananaScore.ToString();
-        cherryScoreText.text = cherryScore.ToString();
+        appleScoreText.text = appleScore.ToReadableString();
+        bananaScoreText.text = bananaScore.ToReadableString();
+        cherryScoreText.text = cherryScore.ToReadableString();
     }
 
-    //TODO:: 리워드발생 시 Box위치 위에 리워드 +
-    //10 UI띄움
-    //public void RewardsUI()
-    //{
-    //    GameObject go = Instantiate(plusTxt, plusTxt.transform.position, plusTxt.transform.rotation, UICanvus);
-    //    Destroy(go, 0.5f);
-    //}
+    public void ShowRewardUI(Vector3 position)
+    {
+        GameObject rewardUI = Instantiate(rewardPrefab, uiCanvas);
+        rewardUI.transform.position = Camera.main.WorldToScreenPoint(position);
+        Destroy(rewardUI, 0.5f); // 0.5초 후 UI 제거
+    }
 }

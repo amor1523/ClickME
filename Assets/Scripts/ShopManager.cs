@@ -94,17 +94,17 @@ public class ShopManager : MonoBehaviour
 
             case "Fruit4":
                 purchaseSuccess = rewardManager.UseApples(selectedPrice);
-                if (purchaseSuccess) gameManager.IncreaseBaseRewardAmount(100);
+                if (purchaseSuccess) gameManager.IncreaseBaseRewardAmount(100000);
                 break;
 
             case "Fruit5":
                 purchaseSuccess = rewardManager.UseBananas(selectedPrice);
-                if (purchaseSuccess) gameManager.IncreaseBaseRewardAmount(100);
+                if (purchaseSuccess) gameManager.IncreaseBaseRewardAmount(100000);
                 break;
 
             case "Fruit6":
                 purchaseSuccess = rewardManager.UseCherries(selectedPrice);
-                if (purchaseSuccess) gameManager.IncreaseBaseRewardAmount(100);
+                if (purchaseSuccess) gameManager.IncreaseBaseRewardAmount(100000);
                 break;
 
             default:
