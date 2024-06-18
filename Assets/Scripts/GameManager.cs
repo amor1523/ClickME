@@ -1,6 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Numerics; // BigInteger 사용하기 위한 네임스페이스 추가
 using UnityEngine;
+using Quaternion = UnityEngine.Quaternion;
+using Vector3 = UnityEngine.Vector3;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject friendPrefab2;
     public GameObject friendPrefab3;
 
-    private int baseRewardAmount= 10; // 과일 기본 획득량
+    private BigInteger baseRewardAmount = new BigInteger(10); // 과일 기본 획득량
 
     void Start()
     {
@@ -23,14 +24,15 @@ public class GameManager : MonoBehaviour
     void SpawnNewBox()
     {
         float xPosition = Random.Range(-5.0f, 5.0f);
-        currentBox = Instantiate(boxPrefab, new Vector3(xPosition, 1, 0), Quaternion.identity);
+        currentBox = Instantiate(boxPrefab, new Vector3(xPosition, 1, 0), UnityEngine.Quaternion.identity);
     }
 
     public void OnBoxDestroyed()
     {
+        Vector3 boxPosition = currentBox.transform.position;
         currentBox = null;
         int randomReward = Random.Range(0, 3); // 0, 1, 2 중 하나의 값을 랜덤으로 선택
-        rewardManager.AddRandomReward(randomReward, baseRewardAmount); // 선택된 보상에 대해 10개 추가
+        rewardManager.AddRandomReward(randomReward, baseRewardAmount, boxPosition); // 선택된보상 추가
         SpawnNewBox();
     }
 
