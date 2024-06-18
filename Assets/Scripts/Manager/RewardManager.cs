@@ -123,6 +123,11 @@ public class RewardManager : MonoBehaviour
     {
         FruitsData fruitsData = DataManager.Instance.LoadData(); // DataManager에서 LoadData 호출
 
+        //if (fruitsData == null) // 예외처리2
+        //{
+        //    // 초기값으로 세팅하는 로직 작성
+        //}
+
         appleScore = new BigInteger(int.Parse(fruitsData.appleScore_string)); // 값 대입
         bananaScore = new BigInteger(int.Parse(fruitsData.bananaScore_string));
         cherryScore = new BigInteger(int.Parse(fruitsData.cherryScore_string));
