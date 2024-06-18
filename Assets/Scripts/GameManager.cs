@@ -5,6 +5,8 @@ using Vector3 = UnityEngine.Vector3;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+
     public GameObject boxPrefab;
     public GameObject currentBox;
     private RewardManager rewardManager;
@@ -15,9 +17,22 @@ public class GameManager : MonoBehaviour
 
     private BigInteger baseRewardAmount = new BigInteger(10); // 과일 기본 획득량
 
+    public ObjectPool objectPool;
+    [SerializeField] private AudioClip DestroyBoxClip;
+
+    public ParticleSystem EffectParticle;
+
+    public void Awake()
+    {
+        Instance = this;
+
+        EffectParticle = GameObject.FindGameObjectWithTag("Particle").GetComponent<ParticleSystem>();
+    }
+
     void Start()
     {
         rewardManager = FindObjectOfType<RewardManager>();
+        objectPool = FindObjectOfType<ObjectPool>();
         SpawnNewBox();
     }
 
@@ -33,6 +48,17 @@ public class GameManager : MonoBehaviour
         currentBox = null;
         int randomReward = Random.Range(0, 3); // 0, 1, 2 중 하나의 값을 랜덤으로 선택
         rewardManager.AddRandomReward(randomReward, baseRewardAmount, boxPosition); // 선택된보상 추가
+        if(DestroyBoxClip) SoundManager.PlayClip(DestroyBoxClip); // AudioClip 재생
+
+        // 파티클 적용
+        ParticleSystem particleSystem = Instance.EffectParticle;
+        particleSystem.transform.position = boxPosition;
+        ParticleSystem.EmissionModule em = particleSystem.emission;
+        em.SetBurst(0, new ParticleSystem.Burst(0, Mathf.Ceil(10)));
+        ParticleSystem.MainModule mm = particleSystem.main;
+        mm.startSpeedMultiplier = 10f;
+        particleSystem.Play();
+
         SpawnNewBox();
     }
 

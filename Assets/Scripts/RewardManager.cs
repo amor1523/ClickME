@@ -9,9 +9,9 @@ public class RewardManager : MonoBehaviour
     public TextMeshProUGUI appleScoreText;
     public TextMeshProUGUI bananaScoreText;
     public TextMeshProUGUI cherryScoreText;
-    private BigInteger appleScore = new BigInteger(1000); // BigInteger 기능을 확인하고 싶다면 1000 넣기!
-    private BigInteger bananaScore = new BigInteger(1000); // BigInteger 기능을 확인하고 싶다면 1000000 넣기!
-    private BigInteger cherryScore = new BigInteger(1000); // BigInteger 기능을 확인하고 싶다면 1000000000 넣기!
+    private BigInteger appleScore = new BigInteger(0); // BigInteger 기능을 확인하고 싶다면 1000 넣기!
+    private BigInteger bananaScore = new BigInteger(0); // BigInteger 기능을 확인하고 싶다면 1000000 넣기!
+    private BigInteger cherryScore = new BigInteger(0); // BigInteger 기능을 확인하고 싶다면 1000000000 넣기!
 
     public GameObject rewardPrefab; // 프리팹 참조
     public Transform uiCanvas; // UI 캔버스 참조
