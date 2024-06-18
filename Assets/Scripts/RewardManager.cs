@@ -9,9 +9,9 @@ public class RewardManager : MonoBehaviour
     public TextMeshProUGUI appleScoreText;
     public TextMeshProUGUI bananaScoreText;
     public TextMeshProUGUI cherryScoreText;
-    private int appleScore = 0;
-    private int bananaScore = 0;
-    private int cherryScore = 0;
+    private int appleScore = 1000;
+    private int bananaScore = 1000;
+    private int cherryScore = 1000;
 
     private void Start()
     {

@@ -51,6 +51,11 @@ public class ShopManager : MonoBehaviour
     public void OnFriend2Purchase(Object button) => OnPurchaseClick("Friend2", 500, button);
     public void OnFriend3Purchase(Object button) => OnPurchaseClick("Friend3", 500, button);
 
+    // BigInteger 기능을 위한 생산량 대폭 증가 구매리스트 등록
+    public void OnFruit4Purchase(Object button) => OnPurchaseClick("Fruit4", 1000, button);
+    public void OnFruit5Purchase(Object button) => OnPurchaseClick("Fruit5", 1000, button);
+    public void OnFruit6Purchase(Object button) => OnPurchaseClick("Fruit6", 1000, button);
+
     public void OnYesButtonClick()
     {
         bool purchaseSuccess = false;
@@ -85,6 +90,21 @@ public class ShopManager : MonoBehaviour
             case "Friend3":
                 purchaseSuccess = rewardManager.UseCherries(selectedPrice);
                 if (purchaseSuccess) gameManager.SpawnFriend(3);
+                break;
+
+            case "Fruit4":
+                purchaseSuccess = rewardManager.UseApples(selectedPrice);
+                if (purchaseSuccess) gameManager.IncreaseBaseRewardAmount(100);
+                break;
+
+            case "Fruit5":
+                purchaseSuccess = rewardManager.UseBananas(selectedPrice);
+                if (purchaseSuccess) gameManager.IncreaseBaseRewardAmount(100);
+                break;
+
+            case "Fruit6":
+                purchaseSuccess = rewardManager.UseCherries(selectedPrice);
+                if (purchaseSuccess) gameManager.IncreaseBaseRewardAmount(100);
                 break;
 
             default:
