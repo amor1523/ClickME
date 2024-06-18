@@ -2,6 +2,7 @@
 1. 주기적으로 리스폰되는 Box를 클릭해서 부수면 재화를 얻을 수 있다.
 2. 재화는 사과, 바나나, 체리 3종류로 각각의 재화로 구매할 수 있는 클릭에 도움을 주는 다양한 아이템 또는 업그레이드 구매 가능
 3. 상점 UI기능으로 살 수 있는 아이템 구현, 적절한 가격 설정
+4. Asset은 cc0의 무료에셋 및 강의에서 제공해준파일 사용
 
 [필수 구현사항]
 
@@ -75,14 +76,18 @@ currentBox가 null이면 코루틴을 한번 쉬는 방식으로 해결해보려
 
 
 
-[선택 구현사항] - 나머지는 시간이 많으면 가능할 거 같은데... BigInteger기능을 최우선적으로 해보자.
+[선택 구현사항]
 
 1. 파티클 시스템
 
+![image](https://github.com/amor1523/ClickME/assets/167174802/ef536464-4de4-4f00-abfd-ee13cab1cceb)
+
+Box가 파괴되었을 때 Particle재생하도록 구현
 
    
 2. 사운드 이펙트
 
+MainBGM 및 BoxDestroy Effect 추가
 
    
 3. 애니메이션
@@ -91,8 +96,16 @@ currentBox가 null이면 코루틴을 한번 쉬는 방식으로 해결해보려
 
 Friends들이 가만히 서있는게 밋밋해서 랜덤한 위치로 달려가는 코드를 구현해보았다.
 
+
+![image](https://github.com/amor1523/ClickME/assets/167174802/790816e3-6598-450f-82e7-e97c9ef468b2)
+
+Box가 부숴졌을 때 동적으로 Sprite와 Text를 생성하도록 UI 애니메이션 구현
+
   
 4. 저장 및 로드 시스템
+
+아직 저장 및 로드 시스템에 대해 다루는데 익숙하지 않은 것 같다.
+특강내용을 복습해서 구현해봐야겠다.
 
    
 5. BigInteger 기능
@@ -100,3 +113,18 @@ Friends들이 가만히 서있는게 밋밋해서 랜덤한 위치로 달려가�
    https://github.com/keiwando/biginteger
 
    참조해보기
+   
+
+![image](https://github.com/amor1523/ClickME/assets/167174802/4126e8a9-04c3-4707-8d0d-9478c59e27c7)
+
+![image](https://github.com/amor1523/ClickME/assets/167174802/e58cf035-6beb-4e92-b46c-b8f1efd93b65)
+
+GitHug를 참조하여 BigInteger.cs를 만들었고, BigIntegerExtensions.cs를 작성하여 BigInteger기능을 구현하였다.
+
+
+
+
+
+
+
+   
