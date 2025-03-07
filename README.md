@@ -158,7 +158,7 @@ public T LoadData<T>()
 
 ![image](https://github.com/amor1523/ClickME/assets/167174802/e58cf035-6beb-4e92-b46c-b8f1efd93b65)
 
-GitHug를 참조하여 BigInteger.cs를 만들었고, BigIntegerExtensions.cs를 작성하여 BigInteger기능을 구현하였다.
+GitHub를 참조하여 BigInteger.cs를 만들었고, BigIntegerExtensions.cs를 작성하여 BigInteger기능을 구현하였다.
 
 
 
