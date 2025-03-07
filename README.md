@@ -43,7 +43,7 @@ RewardManager 스크립트에 Reward에 대한 전반적인 내용 구현 및 UI
 
 ShopBTN스크립트로 상점을 열고닫는 기능 구현
 
-TroubldShooting : 상점을 열었을 때도 자동클릭이 발생하여 TimeScale을 변경하여 해결
+TroubleShooting : 상점을 열었을 때도 자동클릭이 발생하여 TimeScale을 변경하여 해결
 
 ShopManager스크립트를 통해 상점에대한 전반적인 기능 구현
 UI 기능 중 하나인 Scroll View 기능을 사용하였는데 생각보다 사용이 어려웠다.
